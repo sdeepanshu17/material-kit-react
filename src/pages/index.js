@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Script from 'next/script'
 import { subDays, subHours } from 'date-fns';
 import { Box, Container, Unstable_Grid2 as Grid } from '@mui/material';
 import { Layout as DashboardLayout } from 'src/layouts/dashboard/layout';
@@ -16,17 +15,17 @@ const now = new Date();
 
 const Page = () => (
   <>
-    <Script src="https://www.googletagmanager.com/gtag/js?id=G-600TLCF11H" />
-      <Script id="google-analytics">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
- 
-          gtag('config', 'G-600TLCF11H');
-        `}
-      </Script>
     <Head>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-600TLCF11H" />
+      <script dangerouslySetInnerHTML={{
+        __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)}
+          gtag('js', new Date());
+          gtag('config', 'G-600TLCF11H', { page_path: window.location.pathname });
+        `
+      }}
+      />
     
       <title>
         Overview | Devias Kit
