@@ -18,6 +18,7 @@ import {
 } from '@mui/material';
 import { useAuth } from 'src/hooks/use-auth';
 import { Layout as AuthLayout } from 'src/layouts/auth/layout';
+import ReactGA from 'react-ga4';
 
 const Page = () => {
   const router = useRouter();
@@ -174,6 +175,13 @@ const Page = () => {
                   fullWidth
                   size="large"
                   sx={{ mt: 3 }}
+                  onClick={() => {
+                    ReactGA.event({
+                      category: 'User',
+                      action: 'Login',
+                      label: 'Email'
+                    });
+                  }}
                   type="submit"
                   variant="contained"
                 >
