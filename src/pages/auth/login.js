@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import Head from 'next/head';
 import NextLink from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -20,7 +20,15 @@ import { useAuth } from 'src/hooks/use-auth';
 import { Layout as AuthLayout } from 'src/layouts/auth/layout';
 import ReactGA from 'react-ga4';
 
+const trackingId = "G-600TLCF11H";
+ReactGA.initialize(trackingId);
+
 const Page = () => {
+
+  useEffect(() => {
+    ReactGA.pageview('/login');
+  }, []);
+
   const router = useRouter();
   const auth = useAuth();
   const [method, setMethod] = useState('email');
