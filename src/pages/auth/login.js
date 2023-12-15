@@ -25,10 +25,6 @@ ReactGA.initialize(trackingId);
 
 const Page = () => {
 
-  useEffect(() => {
-    ReactGA.pageview('/login');
-  }, []);
-
   const router = useRouter();
   const auth = useAuth();
   const [method, setMethod] = useState('email');
