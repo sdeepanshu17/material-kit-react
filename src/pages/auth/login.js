@@ -180,11 +180,23 @@ const Page = () => {
                   size="large"
                   sx={{ mt: 3 }}
                   onClick={() => {
-                    ReactGA.event({
-                      category: 'User',
-                      action: 'Login',
-                      label: 'Email'
-                    });
+                    ReactGA.event('add_to_cart',{
+                    currency: 'INR',
+                    value: 100,
+                    items: [
+                      {
+                        item_name: 'test',
+                        item_id: 'test',
+                        price: 100,
+                        quantity: 1
+                      }
+                    ]
+                  });
+                    // ReactGA.event({
+                    //   category: 'User',
+                    //   action: 'Login',
+                    //   label: 'Email'
+                    // });
                   }}
                   type="submit"
                   variant="contained"

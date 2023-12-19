@@ -26,7 +26,7 @@ const App = (props) => {
 
   return (
     <CacheProvider value={emotionCache}>
-    <Script id="google-analytics">
+    {/* <Script id="google-analytics">
         {`
           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
           new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -34,9 +34,9 @@ const App = (props) => {
           'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
           })(window,document,'script','dataLayer','GTM-KLJB4ZQC');
         `}
-      </Script>
+      </Script> */}
       <Head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-600TLCF11H" />
+        {/* <script async src="https://www.googletagmanager.com/gtag/js?id=G-600TLCF11H" />
         <script dangerouslySetInnerHTML={{
           __html: `
             window.dataLayer = window.dataLayer || [];
@@ -45,7 +45,7 @@ const App = (props) => {
             gtag('config', 'G-600TLCF11H', { page_path: window.location.pathname });
           `
         }}
-        />
+        /> */}
         <title>
           Devias Kit
         </title>
@@ -55,13 +55,13 @@ const App = (props) => {
         />
       </Head>
       <LocalizationProvider dateAdapter={AdapterDateFns}>
-      <noscript>
+      {/* <noscript>
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLJB4ZQC" 
         height="0" 
         width="0" 
         style={{display:"none", visibility:"hidden"}}>
         </iframe>
-      </noscript>
+      </noscript> */}
         <AuthProvider>
           <ThemeProvider theme={theme}>
             <CssBaseline />

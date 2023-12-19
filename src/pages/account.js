@@ -3,20 +3,20 @@ import { Box, Container, Stack, Typography, Unstable_Grid2 as Grid } from '@mui/
 import { Layout as DashboardLayout } from 'src/layouts/dashboard/layout';
 import { AccountProfile } from 'src/sections/account/account-profile';
 import { AccountProfileDetails } from 'src/sections/account/account-profile-details';
-import ReactGA from 'react-ga4';
-import { useEffect } from 'react';
+// import ReactGA from 'react-ga4';
+// import { useEffect } from 'react';
 
-const trackingId = "G-600TLCF11H";
-ReactGA.initialize(trackingId);
+// const trackingId = "G-600TLCF11H";
+// ReactGA.initialize(trackingId);
 
 const Page = () => {
-  useEffect(() => {
-    ReactGA.event({
-      category: 'User',
-      action: 'Account Page View',
-      label: 'Account Page View'
-    });
-  }, []);
+  // useEffect(() => {
+  //   ReactGA.event({
+  //     category: 'User',
+  //     action: 'Account Page View',
+  //     label: 'Account Page View'
+  //   });
+  // }, []);
 
     return(
   <>
